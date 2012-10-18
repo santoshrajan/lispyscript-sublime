@@ -1,0 +1,82 @@
+{ "name": "LispyScript",
+  "scopeName": "source.lispyscript",
+  "fileTypes": ["ls"],
+  "foldingStartMarker": "\\(",
+  "foldingStopMarker": "\\)",
+  "patterns": [
+      {
+      	"name": "string.quoted.double.lispyscript",
+      	"begin": "\"",
+      	"end": "\"",
+      	"patterns": [
+      	    {
+              "name": "constant.character.escape.lispyscript",
+              "match": "\\\\."     	    	
+      	    }
+      	]
+      },
+      {
+      	"name": "string.quoted.single.lispyscript",
+      	"begin": "'",
+      	"end": "'",
+      	"patterns": [
+      	    {
+              "name": "constant.character.escape.lispyscript",
+              "match": "\\\\."     	    	
+      	    }
+      	]
+      },
+      {
+      	"name": "constant.array.lispyscript",
+      	"begin": "\\[",
+      	"end": "\\]",
+      	"patterns": [
+      	    {
+              "include": "$self"     	    	
+      	    }
+      	]
+      },
+      {
+      	"name": "constant.object.lispyscript",
+      	"begin": "\\{",
+      	"end": "\\}",
+      	"patterns": [
+      	    {
+              "include": "$self"     	    	
+      	    }
+      	]
+      },
+      {
+      	"name": "string.regexp.lispyscript",
+      	"begin": "/[^\\s]",
+      	"end": "/",
+      	"patterns": [
+      	    {
+              "name": "constant.character.escape.lispyscript",
+              "match": "\\\\."     	    	
+      	    }
+      	]
+      },
+      {
+      	"name": "comment.line.lispyscript",
+      	"match": ";.*"
+      },
+      {
+      	"name": "keyword.control.lispyscript",
+      	"match": "\\b(?i:function|do|macro|loop|recur|if|cond|when|unless|var|set|include|try|throw|new|get|str)\\s"
+      },
+      {
+        "name": "keyword.operator.lispyscript",
+        "match": "\\b(?i:true\\?|false\\?|undefined\\?|null\\?|zero\\?|boolean\\?|number\\?|string\\?|array\\?|object\\?)\\s"
+      },
+      {
+        "name": "support.function.lispyscript",
+        "match": "\\b(?i:each|each2d|eachKey|map|reduce|assert|testGroup|testRunner|monad|doMonad|withMonad)\\s"
+      },
+      {
+      	"name": "support.type.lispyscript",
+      	"match": "\\b(?i:array|object|arrayInit|arrayInit2d|identityMonad|maybeMonad|arrayMonad|stateMonad|continuationMonad)\\s"
+      }
+  ],
+  "uuid": "86dcfa20-1c07-4a13-aa3d-f00b9ecab78d"
+}
